@@ -3,6 +3,7 @@ const apiUrl = 'https://randomuser.me/api';
 
 // other var
 const gallery = document.getElementById('gallery');
+
 // helper fetch function
 async function getJSON(url){
 try {
@@ -54,4 +55,4 @@ function generateHTML(data){
 
 
 grabData(apiUrl)
-.then(generateHTML)
+.then(generateHTML);
