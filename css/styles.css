@@ -261,3 +261,11 @@ header h1 {
         color: rgba(25, 25, 25, 1); 
     }
 }
+
+
+
+/* Student (Jiten) edits */
+.modal-container{
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+}
