@@ -18,6 +18,7 @@ function generateHTML(data){
 }
 
 function modalHTML (data){
+    const date = new Date(data.dob.date); // to display dob
 return `
 <div class="modal">
     <button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>
@@ -29,7 +30,7 @@ return `
         <hr>
         <p class="modal-text">${data.cell}5</p>
         <p class="modal-text">${data.location.street.number} ${data.location.street.name}, ${data.location.city}, ${data.location.postcode}</p>
-        <p class="modal-text">Birthday: ${data.dob.date}</p>
+        <p class="modal-text">Birthday: ${date.getDay()} / ${date.getMonth()} / ${date.getFullYear()}</p>
     </div>
 </div>
 
