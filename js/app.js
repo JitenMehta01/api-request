@@ -40,13 +40,10 @@ function modalWindow (data){
                 }
             });
             }
-        } else if(e.target.id === 'modal-close-btn'){
-            const closeModal = document.querySelector('#modal-close-btn');
-            closeModal.addEventListener('click', (
-                
-            ) =>{
-                console.log('working');
-            })
+        } else if(e.target.closest('#modal-close-btn')){
+            const modalContainer = document.querySelector('.modal-container');
+            gallery.removeChild(modalContainer);
+            
         }         
     });
     
