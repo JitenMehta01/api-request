@@ -1,4 +1,5 @@
 function generateHTML(data){
+    h1.textContent = `AWESOME STARTUP EMPLOYEE DIRECTORY`;
     search.innerHTML = `
     <form action="#" method="get">
     <input type="search" id="search-input" class="search-input" placeholder="Search...">
