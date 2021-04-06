@@ -20,7 +20,6 @@ function generateHTML(data){
     `;
     gallery.insertAdjacentHTML('beforeend', html);
     });
-    console.log(data);
     return data;
 }
 
