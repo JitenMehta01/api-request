@@ -3,6 +3,7 @@ const apiUrl = 'https://randomuser.me/api/?results=12';
 
 // other var
 const gallery = document.getElementById('gallery');
+const search = document.querySelector('.search-container');
 
 
 // helper fetch function
@@ -25,7 +26,6 @@ async function grabData(url){
 
 function modalWindow (data){
     let personIndex;
-    console.log(data.length);
     gallery.addEventListener('click', e =>{
         const card = e.target.closest('.card');
         const modalContainer = document.querySelector('.modal-container');
@@ -62,7 +62,7 @@ function modalWindow (data){
              }
          }
         // if the user clicks on the prev button, render the next person in the data array into HTML
-         else{
+         else if(e.target.closest('#modal-prev')){
              if(personIndex > 0 ){
             modalContainer.innerHTML = modalHTML(data[personIndex -= 1]);
              } else{
@@ -74,10 +74,42 @@ function modalWindow (data){
 
 }
 
+// create a variable which holds the uppercase value ofsearch bar
+// create a variable which holds an array of the names from data
+// add a keydown event listener to the searchbar
+  // iterate through the array
+  // if the value of the searchbar matches an index and returns a value that is less than 0, set the display to none. Otherwise set it to initial. 
+
+  function filter () {
+const personName = [...document.querySelectorAll('.card-info-container h3')];
+  const searchValue = search.querySelector('#search-input').value.toLowerCase(); 
+  console.log(searchValue);
+  personName.forEach(person =>{
+      const card = person.closest('.card');
+      if(person.textContent.toLowerCase().indexOf(searchValue) < 0){
+          card.style.display = 'none';
+      } else{
+          card.style.display = '';
+      }
+  });
+}
+
+search.addEventListener('keyup', () =>{
+    filter();
+});
+
+search.addEventListener('click', () =>{
+    filter();
+});
+
+
+
+
+
 
 
 grabData(apiUrl)
 .then(generateHTML)
-.then(modalWindow)
+.then(modalWindow);
 
 
