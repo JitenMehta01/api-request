@@ -29,7 +29,7 @@ function modalHTML (data){
     let monthtoString;
     if(date.getDate() < 10){
         datetoString = `0${date.getDate()}`;
-    }s
+    }
     if(date.getMonth() < 9){
         monthtoString = `0${date.getMonth(date.getMonth)+1}`;
     } else{
